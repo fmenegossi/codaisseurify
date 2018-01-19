@@ -29,7 +29,7 @@ module Codaisseurify
     config.generators.system_tests = nil
 
 		console do
-			ActiveRecord::Base.conection
+			ActiveRecord::Base.connection
 		end
   end
 end
