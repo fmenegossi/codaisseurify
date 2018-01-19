@@ -1,0 +1,14 @@
+Name: <%= @artist.name %>
+<br>
+Style: <%= @artist.style %>
+
+<br>
+<br>
+
+<h1>Songs</h1>
+
+<ul>
+<% @artist.songs.each do |song| %>
+	<li><%= song.title %></li>
+<% end %>
+</ul>
