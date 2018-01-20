@@ -26,6 +26,9 @@ class ArtistsController < ApplicationController
 
 	def update
 		if @artist.update(artist_params)
+			@artist.image = image_params
+			@artist.save
+
 			redirect_to @artist
 		else
 			render 'edit'
@@ -42,6 +45,10 @@ class ArtistsController < ApplicationController
 	end
 
 	private
+
+	def image_params
+		params[:image].present? ? params[:image] : []
+	end
 
 	def load_artist
 		if params.has_key?("id")
