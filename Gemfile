@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+source 'https://rubygems.org'
+ruby '2.4.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
@@ -30,6 +32,16 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+
+# Use Bootstrap for styling
+gem 'bootstrap-sass'
+
+# Use jQuery for easier javascript
+gem 'jquery-rails'
+
+# Use Rails 12Factor
+gem "rails_12factor"
 
 # Carrier Wave take care of uploads and cloud integrations
 gem 'carrierwave', '0.11.2'
