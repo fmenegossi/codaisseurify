@@ -1,3 +1,13 @@
+
+<table border='1'>
+	<thead>
+		<td><%= link_to("Artist Name", {sort: "name", direction: invert_order_by})  %></td>
+		<td><%= link_to("Creation Date", {sort: "created_at", direction: invert_order_by})  %></td>
+	</thead>
 <% @artists.each do |artist| %>
-	<%= link_to(artist.name, artist_path(artist.id)) %>
+	<tr>
+		<td> <li><%= link_to(artist.name, artist_path(artist.id)) %> </td>
+		<td> <%= artist.created_at.to_date %> </li> </td>
+	</tr>
 <% end %>
+</table>
