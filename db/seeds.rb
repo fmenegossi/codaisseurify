@@ -1,6 +1,6 @@
-bloodbath = Artist.create!(name: "Bloodbath", style: "Death Metal")
-immortal = Artist.create!(name: "Immortal", style: "Black Metal")
-vitas = Artist.create!(name: "Vitas", style: "Russian Pop")
+bloodbath = Artist.create!(name: "Bloodbath", style: "Death Metal", remote_image_url:"http://res.cloudinary.com/fmenegossi/image/upload/v1516471003/sample.jpg")
+immortal = Artist.create!(name: "Immortal", style: "Black Metal", remote_image_url:"http://res.cloudinary.com/fmenegossi/image/upload/v1516471003/sample.jpg")
+vitas = Artist.create!(name: "Vitas", style: "Russian Pop", remote_image_url:"http://res.cloudinary.com/fmenegossi/image/upload/v1516471003/sample.jpg")
 
 Song.create!([
 	{ title: "One by One", artist: immortal },

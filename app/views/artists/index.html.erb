@@ -4,10 +4,15 @@
 		<td><%= link_to("Artist Name", {sort: "name", direction: invert_order_by})  %></td>
 		<td><%= link_to("Creation Date", {sort: "created_at", direction: invert_order_by})  %></td>
 	</thead>
-<% @artists.each do |artist| %>
+	<% @artists.each do |artist| %>
+		<tr>
+			<td> <li><%= link_to(artist.name, artist_path(artist.id)) %> </td>
+			<td> <%= artist.created_at.to_date %> </li> </td>
+			<td><%= link_to("Edit", edit_artist_path(artist.id)) %></td>
+			<td> <%= link_to("Delete", artist_path(artist.id), method: :delete, data: {confirm: "Delete #{artist.name}?"}) %> </td>
+		</tr>
+	<% end %>
 	<tr>
-		<td> <li><%= link_to(artist.name, artist_path(artist.id)) %> </td>
-		<td> <%= artist.created_at.to_date %> </li> </td>
+		<td span="3"> <%= link_to("New Artist", new_artist_path) %> </td>
 	</tr>
-<% end %>
 </table>
