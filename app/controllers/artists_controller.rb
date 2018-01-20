@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-	before_action :load_artist
+	before_action :load_artist, only:[:show, :edit, :update, :destroy]
 	helper_method :invert_order_by
 
 	def index
@@ -18,6 +18,9 @@ class ArtistsController < ApplicationController
 		@artist = Artist.new(artist_params)
 
 		if @artist.save
+			@artist.image = image_params
+			@artist.save
+
 			redirect_to artists_path
 		else
 			render 'new'
@@ -51,9 +54,7 @@ class ArtistsController < ApplicationController
 	end
 
 	def load_artist
-		if params.has_key?("id")
-			@artist = Artist.find(params[:id])
-		end
+		@artist = Artist.find(params[:id])
 	end
 
 	def artist_params
