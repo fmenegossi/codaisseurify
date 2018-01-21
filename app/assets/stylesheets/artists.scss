@@ -1,3 +1,29 @@
-// Place all the styles related to the Artists controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.artist-header{
+	color: rgba($ify-white, .75);
+	font-size: 2rem;
+	font-weight: 500;
+	text-align: justify;
+}
+
+.artist-header a:hover{
+	text-decoration: underline;
+	color: rgba($ify-white, .5);
+}
+
+.artist-item{
+	border-bottom: 1px solid $lighter-gray;
+	line-height: 3rem;
+}
+
+.action-icon{
+	font-size: 1.5rem;
+}
+
+.img-artist{
+	min-height: 100px;
+	min-width: 100px;
+	max-width: 300px;
+	max-height: 300px;
+	background: url('https://upload.wikimedia.org/wikipedia/commons/3/37/No_person.jpg');
+	background-size: contain;
+}

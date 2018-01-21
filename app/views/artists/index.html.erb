@@ -1,18 +1,35 @@
+<div class="row">
+	<div class="col-md-4 col-md-offset-4">
+		<div class="row">
+			<div class="col-md-5 artist-header">
+				<%= link_to("Artist Name", {sort: "name", direction: invert_order_by}) %>
+			</div>
+			<div class="col-md-5 artist-header">
+				<%= link_to("Creation Date", {sort: "created_at", direction: invert_order_by}) %>
+			</div>
+			<div class="col-md-2 artist-header">
+				Actions
+			</div>
+		</div>
 
-<table border='1'>
-	<thead>
-		<td><%= link_to("Artist Name", {sort: "name", direction: invert_order_by})  %></td>
-		<td><%= link_to("Creation Date", {sort: "created_at", direction: invert_order_by})  %></td>
-	</thead>
-	<% @artists.each do |artist| %>
-		<tr>
-			<td> <li><%= link_to(artist.name, artist_path(artist.id)) %> </td>
-			<td> <%= artist.created_at.to_date %> </li> </td>
-			<!-- <td><%= link_to("Edit", edit_artist_path(artist.id)) %></td> -->
-			<td> <%= link_to("Delete", artist_path(artist.id), method: :delete, data: {confirm: "Delete #{artist.name}?"}) %> </td>
-		</tr>
-	<% end %>
-	<tr>
-		<td span="3"> <%= link_to("New Artist", new_artist_path) %> </td>
-	</tr>
-</table>
+		<% @artists.each do |artist| %>
+			<div class="row artist-item">
+				<div class="col-md-5">
+					<%= link_to(artist.name, artist_path(artist.id)) %>
+				</div>
+				<div class="col-md-5">
+					<%= artist.created_at.to_date %>
+				</div>
+				<div class="col-md-2 text-center">
+					<%= link_to('<i class="fa fa-trash-o action-icon" alt="Delete"></i>'.html_safe, artist_path(artist.id), method: :delete, data: {confirm: "Delete #{artist.name}?"}) %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+
+</div>
+<div class="row spacer">
+	<div class="col-md-12 text-center">
+		<%= link_to("New Artist", new_artist_path, class:"btn btn-success") %>
+	</div>
+</div>

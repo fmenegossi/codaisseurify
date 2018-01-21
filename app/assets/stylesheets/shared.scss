@@ -1,23 +1,49 @@
 $lighter-gray: rgb(64,64,64);
 $dark-gray: rgb(30,30,30);
 $ify-green: rgb(0,239,101);
+$ify-white: rgb(241,241,241);
+$ify-gray: rgb(81,78,80);
 
 body{
 	background-color: $dark-gray;
+	font-family: 'Varela Round', sans-serif;
+	color: $ify-white;
+}
+
+nav{
+	height: 12rem;
+	font-size: 5rem;
+	text-align: center;
+	padding-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+footer{
+	margin-top: 5rem;
+	font-size: 2rem;
 }
 
 .ify-green{
 	color: $ify-green;
 }
 
-#logo{
-	font-size: 10rem;
-}
-
-nav{
-	height: 20rem;
-}
-
 .gray-gradient{
 	background: linear-gradient(to bottom, $lighter-gray, $dark-gray);
+}
+
+.spacer{
+	margin-top: 3rem;
+}
+
+a, a:hover, a:visited{
+	text-decoration: none;
+	color: rgba($ify-white, .75);
+}
+
+#logo{
+	font-size: 7rem;
+}
+
+#footer-social{
+	font-size: 2rem;
 }

@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>Codaisseurify</title>
+		<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -16,6 +18,9 @@
 		<div class="container-fluid">
     	<%= yield %>
 
+			<%= render 'shared/footer' %>
 		</div>
+
+
   </body>
 </html>
