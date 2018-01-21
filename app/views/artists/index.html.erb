@@ -20,8 +20,11 @@
 				<div class="col-md-5">
 					<%= artist.created_at.to_date %>
 				</div>
-				<div class="col-md-2 text-center">
+				<div class="col-md-1">
 					<%= link_to('<i class="fa fa-trash-o action-icon" alt="Delete"></i>'.html_safe, artist_path(artist.id), method: :delete, data: {confirm: "Delete #{artist.name}?"}) %>
+				</div>
+				<div class="col-md-1">
+					<%= link_to('<i class="fa fa-pencil action-icon" alt="Edit"></i>'.html_safe, edit_artist_path(artist.id)) %>
 				</div>
 			</div>
 		<% end %>

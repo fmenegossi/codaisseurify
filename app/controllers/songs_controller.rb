@@ -4,7 +4,6 @@ class SongsController < ApplicationController
 	def create
 		@song = @artist.songs.new(song_params)
 		@song.save
-
 		redirect_to(@artist, notice: "Song added successfully")
 	end
 
