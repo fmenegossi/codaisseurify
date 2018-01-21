@@ -1,0 +1,23 @@
+$lighter-gray: rgb(64,64,64);
+$dark-gray: rgb(30,30,30);
+$ify-green: rgb(0,239,101);
+
+body{
+	background-color: $dark-gray;
+}
+
+.ify-green{
+	color: $ify-green;
+}
+
+#logo{
+	font-size: 10rem;
+}
+
+nav{
+	height: 20rem;
+}
+
+.gray-gradient{
+	background: linear-gradient(to bottom, $lighter-gray, $dark-gray);
+}

@@ -40,6 +40,9 @@ gem 'bootstrap-sass'
 # Use jQuery for easier javascript
 gem 'jquery-rails'
 
+# Font Awesome for AWESOME icons
+gem "font-awesome-rails"
+
 # Use Rails 12Factor
 gem "rails_12factor"
 
