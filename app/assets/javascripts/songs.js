@@ -27,8 +27,9 @@ function loadSongs(){
 
       let divAction = $('<div class="col-md-4 text-right"></div>');
 
-      let deleteButton = $('<button class="action-icon"></button>')
+      let deleteButton = $('<button href="#" class="action-icon"></button>')
         .attr('value', value.id)
+        .attr('id', `song-${value.id}`)
         .bind("click", deleteSong)
         .html('<i class="fa fa-trash-o action-icon" alt="Delete"></i>');
 
@@ -36,7 +37,6 @@ function loadSongs(){
       divRow.append(divTitle);
       divRow.append(divAction)
       parentDiv.append(divRow);
-
     })
   });
 }
@@ -47,9 +47,9 @@ function deleteSong(){
   let artistId = $("#artist-id").val();
   let songId = $(this).val();
 
-  if(!confirm("Do you really want to delete this song?")){
-    return false;
-  }
+  // if(!confirm("Do you really want to delete this song?")){
+  //   return false;
+  // }
 
   $.ajax({
     type: "DELETE",
@@ -64,12 +64,11 @@ function deleteSong(){
 }
 
 function deleteAllSongs(){
-  if(!confirm("DESTROY ALL THESE BEAUTIFUL SONGS?")){
-    return false;
-  }
+  // if(!confirm("DESTROY ALL THESE BEAUTIFUL SONGS?")){
+  //   return false;
+  // }
 
   let artistId = $("#artist-id").val();
-  alert(artistId);
 
   $.ajax({
     type: "DELETE",
