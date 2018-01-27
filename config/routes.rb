@@ -4,4 +4,11 @@ Rails.application.routes.draw do
   resources :artists do
   	resources :songs, only: [:create, :destroy]
   end
+
+  namespace :api do
+    resources :artists, except: [:new, :edit] do
+      resources :songs, only: [:create, :destroy, :index]
+    end
+    delete '/artist/:artist_id/songs', to: 'songs#destroy_artist_songs', as: 'destroy_artist_songs'
+  end
 end

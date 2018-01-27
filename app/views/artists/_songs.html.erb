@@ -1,0 +1,11 @@
+<% @artist.songs.each do |song| %>
+  
+  <div class="col-md-8">
+    <%= song.title %>
+  </div>
+  <div class="col-md-4 text-right">
+    <button class="btn btn-default" onclick="deleteSong(<%= song.id %>);">
+      <i class="fa fa-trash-o action-icon" alt="Delete"></i>
+    </button>
+  </div>
+<% end %>
