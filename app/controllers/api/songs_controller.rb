@@ -1,8 +1,8 @@
 class Api::SongsController < Api::BaseController
-  before_action :set_artist, except: [:create, :destroy]
+  before_action :set_artist, except: [:destroy]
 
   def destroy_artist_songs
-    Song.destroy_all(artist: @artist) if !@artist.nil?
+    @artist.songs.destroy_all if !@artist.nil?
     render_response(200, message: "Songs destroyed")
   end
 
