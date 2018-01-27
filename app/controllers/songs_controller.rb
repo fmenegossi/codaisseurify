@@ -1,5 +1,5 @@
 class SongsController < ApplicationController
-	before_action :load_artist
+	before_action :set_artist
 
 	def create
 		@song = @artist.songs.new(song_params)
@@ -20,7 +20,7 @@ class SongsController < ApplicationController
 		params.require(:song).permit(:title)
 	end
 
-	def load_artist
+	def set_artist
 		@artist = Artist.find(params[:artist_id])
 	end
 end
