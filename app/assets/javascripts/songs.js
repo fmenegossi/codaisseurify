@@ -7,6 +7,10 @@ $(document).ready(function(){
 function loadSongs(){
   let artistId = $("#artist-id").val();
 
+  if(!artistId){
+    return false;
+  }
+
   $.ajax({
     type: "GET",
     contentType: "application/json",
