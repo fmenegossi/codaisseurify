@@ -62,10 +62,13 @@ group :development, :test do
 	gem 'factory_bot_rails'
 	gem 'faker'
 	gem 'shoulda-matchers', '~> 3.1'
+  gem 'capybara', '~> 2.9', '>= 2.9.1'
+  gem 'selenium-webdriver'
+  gem 'chromedriver-helper'
 end
 
 group :test do
-  gem 'capybara', '~> 2.9', '>= 2.9.1'
+  gem 'database_cleaner'
 end
 
 group :development do
