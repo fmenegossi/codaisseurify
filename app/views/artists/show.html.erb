@@ -12,19 +12,9 @@
 		</div>
 
 		<h1>Songs</h1>
-
-		<% @artist.songs.each do |song| %>
-			<div class="row artist-item">
-				<div class="col-md-8">
-					<%= song.title %>
-				</div>
-				<div class="col-md-4 text-right">
-					<%= link_to('<i class="fa fa-trash-o action-icon" alt="Delete"></i>'.html_safe,
-              artist_song_path(@artist.id, song.id),
-              {id: "song-#{song.id}", method: :delete, data: {confirm: "Delete song #{song.title}?"}}) %>
-				</div>
-			</div>
-		<% end %>
+    <div id="artist-songs">
+      <%#= render 'songs' %>
+    </div>
 
 		<div class="row spacer">
 
@@ -39,18 +29,17 @@
 				</ul>
 				<% end %>
 
-				<%= form_for [@artist, @artist.songs.new], html: { multipart: true } do |f| %>
+        <form id="add-song-form">
+          <div class="form-group">
+            <label for="song-title">Song title</label>
+            <input type="text" id="song-title" class="form-control" placeholder="Song title" />
 
-				<div class="form-group">
-					<label>Song title</label>
-					<%= f.text_field :title, placeholder: "Song title", class: "form-control" %>
-				</div>
-
-				<div class="actions">
-					<%= f.submit "Save", class: "btn btn-success" %>
-				</div>
-
-				<% end %>
+          </div>
+          <div class="actions">
+            <input type="submit" class="btn btn-success" value="Save" />
+          </div>
+        </form>
+        
 			</div>
 		</div>
 
@@ -59,5 +48,8 @@
 <div class="row spacer">
 	<div class="col-md-3 col-md-offset-3">
 		<%= link_to("Back", root_path, class: "btn btn-primary") %>
+	</div>
+  <div class="col-md-3 col-md-offset-3">
+		<button id="delete-all-songs" class="btn btn-primary">DELETE ALL SONGS</button>
 	</div>
 </div>
