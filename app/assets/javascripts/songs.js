@@ -68,20 +68,8 @@ function deleteSong(){
 }
 
 function deleteAllSongs(){
-  // if(!confirm("DESTROY ALL THESE BEAUTIFUL SONGS?")){
-  //   return false;
-  // }
-
-  let artistId = $("#artist-id").val();
-
-  $.ajax({
-    type: "DELETE",
-    contentType: "application/json",
-    dataType: "json",
-    url: `/api/artist/${artistId}/songs`
-  }).done(function(){
-    loadSongs();
-  });
+  $('.action-icon').click();
+  loadSongs();
 }
 
 function addSong(){
