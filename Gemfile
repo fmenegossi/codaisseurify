@@ -47,7 +47,7 @@ gem "font-awesome-rails"
 gem "rails_12factor"
 
 # Carrier Wave take care of uploads and cloud integrations
-gem 'carrierwave', '0.11.2'
+gem 'carrierwave', '1.3.2'
 
 # Cloudinary GEM to host our image files
 gem 'cloudinary', '1.2.3'
